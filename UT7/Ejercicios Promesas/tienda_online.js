@@ -11,7 +11,7 @@ function obtenerProductos() {
             ];
             resolve(productos);
         }, 1000); // Espera 1 segundo para simular una llamada asíncrona
-    });
+    }); 
 }
 
 // Simula la búsqueda de un producto por ID
