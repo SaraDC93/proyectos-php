@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Clics</title>
+</head>
+<body>
+    <p id="contador">Número de clics: 0</p>
+    <button id="boton">Hacer clic</button>
+
+    <script>
+        // Seleccionar el párrafo y el botón
+        const contador = document.getElementById("contador");
+        const boton = document.getElementById("boton");
+
+        // Inicializar contador
+        let numeroDeClics = 0;
+
+        // Agregar evento al botón
+        boton.addEventListener("click", () => {
+            numeroDeClics++; // Incrementar el contador
+            contador.textContent = `Número de clics: ${numeroDeClics}`; // Actualizar el texto del párrafo
+        });
+    </script>
+</body>
+</html>

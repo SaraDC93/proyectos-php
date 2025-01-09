@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo querySelectorAll</title>
+</head>
+<body>
+    <h1>Este es un título principal</h1>
+    <p class="parrafo">Primer párrafo de ejemplo.</p>
+    <p class="parrafo">Segundo párrafo de ejemplo.</p>
+    <p class="parrafo">Tercer párrafo de ejemplo.</p>
+
+    <script>
+        /*
+            querySelectorAll devuelve una NodeList, que puedes recorrer con forEach.
+            Puedes usar cualquier selector CSS válido, como:
+            "#id" para un ID.
+            ".clase" para una clase.
+            "tag" para una etiqueta.
+        */
+        // Seleccionar todos los elementos con la clase "parrafo"
+        const parrafos = document.querySelectorAll(".parrafo");
+
+        // Recorrer todos los párrafos y mostrar su texto en una alerta
+        parrafos.forEach((parrafo, index) => {
+            alert(`El contenido del párrafo ${index + 1} es: ${parrafo.textContent}`);
+        });
+    </script>
+</body>
+</html>

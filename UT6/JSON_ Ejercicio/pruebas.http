@@ -1,0 +1,15 @@
+### Añadir producto
+POST http://localhost/tu_carpeta/gestion_inventario.php?action=add
+Content-Type: application/json
+
+[
+    {"id": 1, "nombre": "Laptop", "cantidad": 10, "precio": 1200},
+    {"id": 2, "nombre": "Mouse", "cantidad": 3, "precio": 25},
+    {"id": 3, "nombre": "Teclado", "cantidad": 1, "precio": 45}
+]
+
+### Calcular valor total del inventario
+GET http://localhost/tu_carpeta/gestion_inventario.php?action=total_value
+
+### Identificar productos con baja cantidad
+GET http://localhost/tu_carpeta/gestion_inventario.php?action=low_stock

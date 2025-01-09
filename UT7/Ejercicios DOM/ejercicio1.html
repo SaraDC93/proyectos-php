@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <p id="parrafo">Este es un párrafo</p>
+    <button id="boton">Cambiar color del párrafo</button>
+
+    <script>
+        // Seleccionar el párrafo y el botón
+        const miParrafo = document.getElementById("parrafo");
+        const boton = document.getElementById("boton");
+
+        // Agregar evento al botón
+        boton.addEventListener("click", () => {
+            const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            miParrafo.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+</html>

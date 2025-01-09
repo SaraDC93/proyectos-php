@@ -1,0 +1,18 @@
+##Consultar todos los usuarios
+GET http://localhost:8000/
+##Insertar un usuario
+POST http://localhost:8000/
+Content-Type: application/json
+
+[{
+"name": "Isabel",
+ "email": "isabel@example.com"
+}
+{
+"name": "juan",
+ "email": "juan@example.com"
+}
+{
+"name": "sara",
+ "email": "sara@example.com"
+}]

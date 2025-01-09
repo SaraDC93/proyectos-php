@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de submit</title>
+</head>
+<body>
+    <h1>Formulario de Ejemplo</h1>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Seleccionar el formulario por su ID
+        const formulario = document.getElementById("miFormulario");
+
+        // Añadir un evento submit al formulario
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar que se recargue la página
+            const nombre = document.getElementById("nombre").value;
+            alert(`¡Hola, ${nombre}! Tu formulario ha sido enviado.`);
+        });
+    </script>
+</body>
+</html>

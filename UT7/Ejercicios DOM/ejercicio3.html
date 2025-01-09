@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        #tareaInput {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #agregarBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .eliminarBtn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="tareaInput" placeholder="Escribe una tarea">
+    <button id="agregarBtn">Agregar Tarea</button>
+    <ul id="listaDeTareas"></ul>
+
+    <script>
+        // Seleccionar elementos
+        const tareaInput = document.getElementById("tareaInput");
+        const agregarBtn = document.getElementById("agregarBtn");
+        const listaDeTareas = document.getElementById("listaDeTareas");
+
+        // Agregar tarea
+        agregarBtn.addEventListener("click", () => {
+            const tareaTexto = tareaInput.value.trim();
+
+            if (tareaTexto === "") {
+                alert("Por favor, escribe una tarea.");
+                return;
+            }
+
+            // Crear un nuevo elemento <li>
+            const nuevaTarea = document.createElement("li");
+
+            // Crear el texto de la tarea
+            const textoTarea = document.createTextNode(tareaTexto);
+
+            // Crear el botón de eliminar
+            const eliminarBtn = document.createElement("button");
+            eliminarBtn.textContent = "Eliminar";
+            eliminarBtn.className = "eliminarBtn";
+
+            // Agregar evento al botón de eliminar
+            eliminarBtn.addEventListener("click", () => {
+                listaDeTareas.removeChild(nuevaTarea);
+            });
+
+            // Agregar texto y botón al <li>
+            nuevaTarea.appendChild(textoTarea);
+            nuevaTarea.appendChild(eliminarBtn);
+
+            // Agregar el <li> a la lista
+            listaDeTareas.appendChild(nuevaTarea);
+
+            // Limpiar el campo de entrada
+            tareaInput.value = "";
+        });
+    </script>
+</body>
+</html>

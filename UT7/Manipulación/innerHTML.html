@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo innerHTML</title>
+</head>
+<body>
+    <h1>Este es un título principal</h1>
+    <p id="miParrafo">Este es un párrafo que se modificará.</p>
+    <button id="cambiarContenido">Cambiar Contenido</button>
+
+    <script>
+        // Seleccionar el párrafo por su ID
+        const parrafo = document.getElementById("miParrafo");
+
+        // Añadir un evento al botón para cambiar el contenido del párrafo
+        document.getElementById("cambiarContenido").addEventListener("click", function() {
+            // Cambiar el contenido del párrafo utilizando innerHTML
+            parrafo.innerHTML = "El contenido del párrafo ha sido cambiado. <strong>¡Gracias por hacer clic!</strong>";
+        });
+    </script>
+</body>
+</html>

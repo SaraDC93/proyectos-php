@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo getElementsByTagName</title>
+</head>
+<body>
+    <h1>Este es un título principal</h1>
+    <h2>Este es un subtítulo</h2>
+    <h2>Otro subtítulo</h2>
+
+    <script>
+        // Seleccionar todos los elementos <h2>
+        const subtitulos = document.getElementsByTagName("h2");
+
+        // Mostrar el texto del primer <h2> en una alerta
+        alert("El contenido del primer subtítulo es: " + subtitulos[0].textContent);
+    </script>
+</body>
+</html>

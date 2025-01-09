@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encontrar el nº mayor en una lista</h1>
+    <form id="numeroForm">
+        <label for="numeros">Introduce los números separados por comas:</label>
+        <input type="text" id="numeros" placeholder="Ej: 12, 45, 23, 67, 34, 89, 2, 5" required>
+        <button type="submit">Encontrar el mayor</button>
+    </form>
+
+    <div class="result" id="resultado"></div>
+
+    <script>
+        function encontrarNumeroMayor (array) {
+            let mayor = array[0];
+
+            for(let i = 1; i < array.length; i++) {
+                if (array[i] > mayor) {
+                    mayor = array[i];
+                }
+            }
+            return mayor;
+        }
+
+        document.getElementById('numeroForm').addEventListener('submit', function(event){
+            event.preventDefault();
+
+            const input = document.getElementById('numeros').value;
+            const numeros = input.split(',').map(num => parseFloat(num.trim()));
+
+            if (numeros.length === 0 || numeros.some(isNaN)) {
+                document.getElementById('resultado').innerText = "Por favor, introduce números válidos.";
+            }else {
+                const numeroMayor = encontrarNumeroMayor(numeros);
+                document.getElementById('resultado').innerText = `El número mayor de la lista es: ${numeroMayor}`;
+            }
+        });
+
+    </script>
+</body>
+</html>

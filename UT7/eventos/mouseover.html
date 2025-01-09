@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de mouseover</title>
+    <style>
+        #miParrafo {
+            padding: 20px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pasa el ratón sobre el párrafo</h1>
+    <p id="miParrafo">Este párrafo cambia de color cuando pasas el ratón sobre él.</p>
+
+    <script>
+        // Seleccionar el párrafo por su ID
+        const parrafo = document.getElementById("miParrafo");
+
+        // Añadir un evento mouseover al párrafo
+        parrafo.addEventListener("mouseover", function() {
+            parrafo.style.backgroundColor = "lightblue"; // Cambiar color de fondo
+        });
+
+        // Añadir un evento mouseout para restaurar el color original
+        parrafo.addEventListener("mouseout", function() {
+            parrafo.style.backgroundColor = "lightgray"; // Restaurar color de fondo
+        });
+    </script>
+</body>
+</html>

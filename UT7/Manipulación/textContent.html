@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo textContent</title>
+</head>
+<body>
+    <h1>Este es un título principal</h1>
+    <p id="miParrafo">Este es un párrafo que se modificará.</p>
+    <button id="cambiarContenido">Cambiar Contenido</button>
+
+    <script>
+/*
+Uso de textContent: textContent establece o devuelve el contenido de texto de un elemento y sus hijos.
+ A diferencia de innerHTML, no interpreta HTML, por lo que cualquier etiqueta HTML que se incluya en el 
+ texto se mostrará como texto plano.
+Seguridad: textContent es más seguro que innerHTML para evitar inyecciones de código malicioso, 
+ya que no permite que se ejecute código HTML.
+*/
+
+        // Seleccionar el párrafo por su ID
+        const parrafo = document.getElementById("miParrafo");
+
+        // Añadir un evento al botón para cambiar el contenido del párrafo
+        document.getElementById("cambiarContenido").addEventListener("click", function() {
+            // Cambiar el contenido del párrafo utilizando textContent
+            parrafo.textContent = "El contenido del párrafo ha sido cambiado. ¡Gracias por hacer clic!";
+        });
+    </script>
+</body>
+</html>

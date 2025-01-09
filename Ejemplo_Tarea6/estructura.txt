@@ -1,0 +1,6 @@
+/todo-api
+├── /api
+│   ├── index.php       (Punto de entrada)
+│   ├── Task.php        (Clase para lógica)
+│   ├── Database.php    (Conexión con MySQL)
+└── .env                (Opcional: Configuración del entorno)

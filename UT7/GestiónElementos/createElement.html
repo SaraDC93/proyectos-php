@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de createElement</title>
+</head>
+<body>
+    <h1>Agregar Elementos al DOM</h1>
+    
+    <button id="agregarParrafo">Agregar Párrafo</button>
+    <div id="contenedor"></div> <!-- Contenedor para nuevos elementos -->
+
+    <script>
+        // Seleccionar el contenedor por su ID
+        const contenedor = document.getElementById("contenedor");
+
+        // Añadir un evento al botón para agregar un nuevo párrafo
+        document.getElementById("agregarParrafo").addEventListener("click", function() {
+            // Crear un nuevo párrafo
+            const nuevoParrafo = document.createElement("p");
+            // Establecer el texto del nuevo párrafo
+            nuevoParrafo.textContent = "Este es un nuevo párrafo agregado al DOM.";
+            // Agregar el nuevo párrafo al contenedor
+            contenedor.appendChild(nuevoParrafo);
+        });
+    </script>
+</body>
+</html>

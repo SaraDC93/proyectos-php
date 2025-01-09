@@ -1,0 +1,41 @@
+# Obtener todas las tareas
+GET http://localhost:8000/
+
+###
+
+# Crear una nueva tarea
+POST http://localhost:8000/
+Content-Type: application/json
+
+{
+  "title": "Otra prueba",
+  "description": "Estudiar cómo construir servicios web RESTful en PHP."
+}
+###
+POST http://localhost:8000/
+Content-Type: application/json
+
+{
+  "title": "Isabel",
+  "description": "Estudiar cómo construir servicios web RESTful en PHP."
+}
+###
+
+# Marcar una tarea como completada
+PUT http://localhost:8000/
+Content-Type: application/json
+
+{
+  "id": 4,
+  "is_completed": 1
+}
+
+###
+
+# Eliminar una tarea
+DELETE http://localhost:8000/
+Content-Type: application/json
+
+{
+  "id": 5
+}

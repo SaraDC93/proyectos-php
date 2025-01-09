@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de removeAttribute</title>
+</head>
+<body>
+    <h1>Eliminar Atributos de un Elemento</h1>
+    
+    <!-- Imagen inicial -->
+    <img id="miImagen" src="https://via.placeholder.com/150" alt="Imagen de ejemplo" />
+
+    <button id="eliminarAtributo">Eliminar Atributo Alt</button>
+
+    <script>
+        // Seleccionar la imagen por su ID
+        const imagen = document.getElementById("miImagen");
+
+        // Añadir un evento al botón para eliminar el atributo 'alt' de la imagen
+        document.getElementById("eliminarAtributo").addEventListener("click", function() {
+            // Eliminar el atributo 'alt' utilizando removeAttribute
+            imagen.removeAttribute("alt");
+
+            // Mostrar una alerta para confirmar que se eliminó el atributo
+            alert("El atributo 'alt' ha sido eliminado.");
+        });
+    </script>
+</body>
+</html>

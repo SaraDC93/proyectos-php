@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de addEventListener</title>
+</head>
+<body>
+    <h1>Cambiar Color de Fondo</h1>
+    
+    <button id="cambiarColor">Cambiar Color de Fondo</button>
+
+    <script>
+        // Seleccionar el botón por su ID
+        const botonCambiarColor = document.getElementById("cambiarColor");
+
+        // Añadir un evento al botón para cambiar el color de fondo
+        botonCambiarColor.addEventListener("click", function() {
+            // Generar un color aleatorio
+            const colorAleatorio = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            // Cambiar el color de fondo del documento
+            document.body.style.backgroundColor = colorAleatorio;
+        });
+    </script>
+</body>
+</html>

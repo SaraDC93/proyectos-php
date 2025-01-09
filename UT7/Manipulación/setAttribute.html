@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Cambiar Atributos</title>
+</head>
+<body>
+    <h1>Cambiar Atributos de un Elemento</h1>
+    
+    <!-- Imagen inicial -->
+    <img id="miImagen" src="https://via.placeholder.com/150" alt="Imagen de ejemplo" />
+
+    <button id="cambiarAtributos">Cambiar Atributos</button>
+
+    <script>
+        // Seleccionar la imagen por su ID
+        const imagen = document.getElementById("miImagen");
+
+        // Añadir un evento al botón para cambiar los atributos de la imagen
+        document.getElementById("cambiarAtributos").addEventListener("click", function() {
+            // Cambiar el atributo 'src' de la imagen
+            imagen.setAttribute("src", "https://via.placeholder.com/300");
+            // Cambiar el atributo 'alt' de la imagen
+            imagen.setAttribute("alt", "Nueva imagen de ejemplo");
+        });
+    </script>
+</body>
+</html>

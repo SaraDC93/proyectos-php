@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo querySelector</title>
+</head>
+<body>
+    <h1>Este es un título principal</h1>
+    <p class="parrafo">Primer párrafo de ejemplo.</p>
+    <p class="parrafo">Segundo párrafo de ejemplo.</p>
+
+    <script>
+      /*   querySelector selecciona solo el primer elemento que coincide con el selector CSS proporcionado.
+            Puedes usar cualquier selector CSS válido, como:
+            "#id" para un ID.
+            ".clase" para una clase.
+            "tag" para una etiqueta.*/
+        // Seleccionar el primer elemento con la clase "parrafo"
+        const primerParrafo = document.querySelector(".parrafo"); //el querySelector solo selecciona el primero
+
+        // Mostrar el texto del elemento en una alerta
+        alert("El contenido del primer párrafo es: " + primerParrafo.textContent);
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+###php -S localhost:8000
+# Obtener todos los libros
+GET http://localhost:8000/
+
+###
+
+# Crear un nuevo libro
+POST http://localhost:8000/
+Content-Type: application/json
+
+{
+  "title": "Viento y verdad",
+  "author": "Brandon Sanderson",
+  "published_year": 2024,
+  "genre": "Fantasía"
+}
+
+### Crear un nuevo libro
+POST http://localhost:8000/
+Content-Type: application/json
+
+{
+  "title": "Palabras Radiantes",
+  "author": "Brandon Sanderson",
+  "published_year": 2021,
+  "genre": "Fantasia"
+}
+
+
+###
+
+# Crear un libro con datos incompletos
+POST http://localhost:8000/
+Content-Type: application/json
+
+{
+  "title": "El camino de los reyes"
+}
+
+###
+
+# Editar un libro
+PUT http://localhost:8000/
+Content-Type: application/json
+
+{
+  "id": 8,
+  "title": "Viento",
+  "author": "Brandon Sanderson",
+  "published_year": 2024,
+  "genre": "Fantasia"
+}
+
+###
+
+# Eliminar un libro
+DELETE http://localhost:8000/
+Content-Type: application/json
+
+{
+  "id": 2
+}

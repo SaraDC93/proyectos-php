@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Cambio de Estilo</title>
+</head>
+<body>
+    <h1>Cambiar Estilos de un Elemento</h1>
+    
+    <p id="miParrafo">Este es un párrafo cuyo estilo se modificará.</p>
+    <button id="cambiarEstilo">Cambiar Estilo</button>
+
+    <script>
+        /*
+        Cuando hagas clic en el botón, el estilo del párrafo cambiará:
+        El color de fondo se cambiará a azul claro.
+        El color del texto se cambiará a azul oscuro.
+        El tamaño de la fuente se cambiará a 20 píxeles.
+        Se añadirá un relleno de 10 píxeles alrededor del texto.
+        Se añadirá un borde de 2 píxeles de grosor en color azul oscuro.
+        */
+        // Seleccionar el párrafo por su ID
+        const parrafo = document.getElementById("miParrafo");
+
+        // Añadir un evento al botón para cambiar los estilos del párrafo
+        document.getElementById("cambiarEstilo").addEventListener("click", function() {
+            // Cambiar el estilo del párrafo utilizando la propiedad style
+            parrafo.style.backgroundColor = "lightblue"; // Cambia el color de fondo
+            parrafo.style.color = "darkblue"; // Cambia el color del texto
+            parrafo.style.fontSize = "20px"; // Cambia el tamaño de la fuente
+            parrafo.style.padding = "10px"; // Añade un poco de relleno
+            parrafo.style.border = "2px solid darkblue"; // Añade un borde
+        });
+    </script>
+</body>
+</html>

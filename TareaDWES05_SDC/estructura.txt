@@ -1,0 +1,19 @@
+/TareaDWES05_SDC/
+├── /css/
+│   └── styles.css
+├── /controllers/
+│   ├── UserController.php
+│   └── TaskController.php
+├── /models/
+│   ├── User.php
+│   └── task.php
+├── /views/
+│   ├── login.php
+│   ├── register.php
+│   ├── task_list.php
+│   ├── task_form.php
+│   
+├── /config/
+│   └── database.php
+├── index.php
+└── README.md

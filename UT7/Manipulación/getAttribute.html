@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de getAttribute</title>
+</head>
+<body>
+    <h1>Obtener Atributos de un Elemento</h1>
+    
+    <!-- Imagen inicial -->
+    <img id="miImagen" src="https://via.placeholder.com/150" alt="Imagen de ejemplo" />
+
+    <button id="mostrarAtributos">Mostrar Atributos</button>
+
+    <script>
+        // Seleccionar la imagen por su ID
+        const imagen = document.getElementById("miImagen");
+
+        // Añadir un evento al botón para mostrar los atributos de la imagen
+        document.getElementById("mostrarAtributos").addEventListener("click", function() {
+            // Obtener los atributos 'src' y 'alt' utilizando getAttribute
+            const src = imagen.getAttribute("src");
+            const alt = imagen.getAttribute("alt");
+
+            // Mostrar los atributos en una alerta
+            alert(`El atributo src es: ${src}\nEl atributo alt es: ${alt}`);
+        });
+    </script>
+</body>
+</html>

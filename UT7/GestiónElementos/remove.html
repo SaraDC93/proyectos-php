@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Eliminar Elemento</title>
+</head>
+<body>
+    <h1>Eliminar Elementos del DOM</h1>
+    
+    <button id="agregarParrafo">Agregar Párrafo</button>
+    <button id="eliminarParrafo" style="display: none;">Eliminar Párrafo</button>
+    <div id="contenedor"></div> <!-- Contenedor para nuevos elementos -->
+
+    <script>
+        // Seleccionar el contenedor y los botones por sus ID
+        const contenedor = document.getElementById("contenedor");
+        const botonEliminar = document.getElementById("eliminarParrafo");
+        let parrafo; // Variable para almacenar el párrafo creado
+
+        // Añadir un evento al botón para agregar un nuevo párrafo
+        document.getElementById("agregarParrafo").addEventListener("click", function() {
+            // Crear un nuevo párrafo
+            parrafo = document.createElement("p");
+            // Establecer el texto del nuevo párrafo
+            parrafo.textContent = "Este es un nuevo párrafo que se puede eliminar.";
+            // Agregar el nuevo párrafo al contenedor
+            contenedor.appendChild(parrafo);
+            // Mostrar el botón de eliminar
+            botonEliminar.style.display = "inline";
+        });
+
+        // Añadir un evento al botón para eliminar el párrafo
+        botonEliminar.addEventListener("click", function() {
+            if (parrafo) {
+                // Eliminar el párrafo del DOM
+                contenedor.removeChild(parrafo);
+                // Ocultar el botón de eliminar después de eliminar el párrafo
+                botonEliminar.style.display = "none";
+                parrafo = null; // Reiniciar la variable
+            }
+        });
+    </script>
+</body>
+</html>
