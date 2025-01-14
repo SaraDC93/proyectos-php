@@ -1,0 +1,9 @@
+
+POST https://jsonplaceholder.typicode.com/posts
+Content-Type: application/json
+
+{
+    "to": "sarusky93@hotmail.com",
+    "subject": "Prueba de correo desde la API",
+    "message": "Mensaje de prueba mandado desde la API REST"
+}

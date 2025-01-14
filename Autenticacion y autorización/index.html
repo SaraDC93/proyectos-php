@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Autenticación de Usuario</title>
+ <link rel="stylesheet" href="style.css"> <!-- Opcional -->
+</head>
+<body>
+ <h1>Registro</h1>
+ <form id="registerForm">
+ <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+ <input type="password" id="registerPassword" placeholder="Contraseña" required>
+ <button type="submit">Registrarse</button>
+ </form>
+
+ <h1>Inicio de Sesión</h1>
+ <form id="loginForm">
+
+
+   Rellenar aquí
+ </form>
+
+ <script>
+ // Función para registrar un nuevo usuario
+ async function registerUser(email, password) {
+ try {
+ const response = await fetch('http://localhost:8000/register.php', {
+ method: 'POST',
+ headers: {
+ 'Content-Type': 'application/json',
+ },
+ body: JSON.stringify({ email, password }),
+ });
+
+ const data = await response.json();
+ alert(data.message); // Muestra un mensaje al usuario
+ console.log(data); // Para depuración
+ } catch (error) {
+ alert('Error en el registro:', error);
+ }
+ }
+
+ // Función para iniciar sesión
+ async function loginUser(email, password) {
+  
+
+Rellenar aquí
+
+
+  // Comprobar si la respuesta no fue exitosa
+ 
+
+Rellenar aquí 
+
+ // Verificar que la respuesta es válida
+Rellenar aquí 
+
+}
+
+
+ // Manejo del formulario de registro
+ const registerForm = document.getElementById('registerForm');
+ registerForm.addEventListener('submit', (event) => {
+ event.preventDefault(); // Evita el envío del formulario por defecto
+ const email = document.getElementById('registerEmail').value;
+ const password = document.getElementById('registerPassword').value;
+ console.log("Registro:", email, password); // Para depuración
+ registerUser(email, password);
+ });
+
+ // Manejo del formulario de inicio de sesión
+ 
+
+Rellenar aquí
+ });
+ </script>
+</body>
+</html>

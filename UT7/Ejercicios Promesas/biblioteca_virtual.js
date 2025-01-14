@@ -13,18 +13,45 @@ function obtenerLibros(){
         }, 1000); //Devuelve una lista de libros después de 1 segundo.
     });
 }
-//simula la busqueda de un libro por ID
+//Simula la busqueda de un libro por ID
 function buscarLibroPorId(id){
     return new Promise((resolve, reject) => {
         obtenerLibros().then((libros) => {
             //Buscar el libro por su id
-            const libros = libros.find(libr => libr.id === id);
+            const libro = libros.find(l => l.id === id);
             if (libros) {
-                resolve(libros); //Resuelve con el libro encontrado
+                resolve(libro); //Resuelve con el libro encontrado
             }else {
-                    eject(`Error: Producto con ID ${id} no encontrado.`);
+                    reject(`Error: Producto con ID ${id} no encontrado.`);
             }
         }, 1500);
     });
 } 
+
+function agregarLibro(nuevoLibro){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (nuevoLibro.id && nuevoLibro.nombre) {
+                libros.push(nuevoLibro); //Agrega el nuevo libro a la lista
+                resolve(nuevoLibro);
+            }else {
+                reject("El libro no cuenta con un campo obligatorio (id o nombre)");
+            }
+        }, 2000);
+    }); 
+}
+
+console.log("Obteniendo lista de libros...");
+obtenerLibros()
+    .then((lista) => {
+        console.log("Lista de libros disponibles:");
+        console.log(lista);
+    })
+
+    console.log("Buscando libro con ID 2...");
+    buscarLibroPorId(2)
+        .then((busqueda) => {
+            console.log("Libro encontrado:");
+            console.log(busqueda);
+        })
 
