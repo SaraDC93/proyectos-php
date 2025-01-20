@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Tarea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="text"],
+        textarea,
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Agregar Tarea</h2>
+    <form id="taskForm">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="description">Descripción:</label>
+        <textarea id="description" name="description" required></textarea>
+        <br>
+        <label for="due_date">Fecha de Vencimiento:</label>
+        <input type="date" id="due_date" name="due_date" required>
+        <br>
+        <button type="submit">Agregar Tarea</button>
+    </form>
+
+    <script>
+        document.getElementById('taskForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const due_date = document.getElementById('due_date').value;
+            const userId = localStorage.getItem('userId'); // Obtener userId del localStorage
+
+            const taskDetails = {
+                title,
+                description,
+                due_date,
+                userId
+            };
+
+            try {
+                const response = await fetch('http://localhost:8000/api/tasks.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({title ,description,due_date,userId })
+                });
+
+                const data = await response.json(); // Parsear la respuesta como JSON
+
+                if (!response.ok) {
+                    alert(data.message); // Mostrar mensaje de error
+                } else {
+                    alert('Tarea agregada con éxito: ' + data.message); // Mostrar mensaje de éxito
+                    // Aquí puedes redirigir al usuario o limpiar el formulario
+                    document.getElementById('taskForm').reset(); // Limpiar el formulario
+                }
+            } catch (error) {
+                alert('Error al agregar tarea: ' + error.message);
+            }
+        });
+    </script>
+
+</body>
+</html>
