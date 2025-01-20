@@ -1,4 +1,4 @@
-project/
+/TareaDWES07_SDC/
 ├── api/
 │   ├── config.php       # Configuración de la conexión a la base de datos.
 │   ├── register.php     # Registro de usuarios.
