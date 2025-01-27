@@ -1,5 +1,5 @@
 <?php
-$host = "localhost";
+$host = "127.0.0.1";
 $db_name = "booktracker";
 $username = "usuSDC";  // Cambia esto si tienes otro usuario
 $password = "Tareas";      // Agrega la contraseña si la tienes
@@ -10,4 +10,5 @@ try {
 } catch (PDOException $e) {
     die("Error en la conexión: " . $e->getMessage());
 }
+
 ?>

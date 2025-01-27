@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booktracker</title>
+    <!-- Bootstrap CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="text-center text-primary mb-4">Booktracker</h1>
+
+        <!-- Sección de Autenticación -->
+        <div id="auth" class="card shadow p-4">
+            <div class="mb-4">
+                <h2 class="text-secondary">Registro</h2>
+                <form id="registerForm" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-success">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <div>
+                <h2 class="text-secondary">Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Correo Electrónico</label>
+                        <input type="email" id="loginEmail" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Contraseña</label>
+                        <input type="password" id="loginPassword" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                </form>          
+            </div>
+        </div>
+
+        <!-- Sección de Libros -->
+        <div id="books" class="mt-5" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="text-secondary">Mis Libros</h2>
+                <button id="logoutButton" class="btn btn-danger">Cerrar Sesión</button>
+            </div>
+
+            <div class="card shadow p-4 mb-4">
+                <h3 class="text-secondary">Crear Libro</h3>
+                <form id="bookForm" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="bookTitle" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="bookTitle" name="title" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="bookDueDate" class="form-label">Fecha Límite</label>
+                        <input type="date" class="form-control" id="bookDueDate" name="due_date" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="bookAuthor" class="form-label">Autor</label>
+                        <textarea class="form-control" id="bookAuthor" name="author" rows="3"></textarea>
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-success">Crear Libro</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card shadow p-4">
+                <h3 class="text-secondary">Lista de Libros</h3>
+                <ul id="booksContainer" class="list-group">
+                    <!-- Libros dinámicamente cargadas aquí -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="main.js"></script>
+</body>
+</html>

@@ -21,5 +21,4 @@ CREATE TABLE books (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
-GRANT ALL PRIVILEGES ON booktracker.* TO 'usuSDC' IDENTIFIED BY 'Tareas';
-FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON booktracker.* TO 'usuSDC'@'localhost' IDENTIFIED BY 'Tareas';
